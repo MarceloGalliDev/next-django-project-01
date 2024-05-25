@@ -1,5 +1,5 @@
 from os import getenv, path  # noqa: F401
-from dotenv import load_dotenv  # type: ignore
+from dotenv import load_dotenv
 from .base import *  # noqa
 from .base import BASE_DIR
 
