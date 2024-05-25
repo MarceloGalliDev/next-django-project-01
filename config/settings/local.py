@@ -1,6 +1,6 @@
 from os import getenv, path  # noqa: F401
 from dotenv import load_dotenv  # type: ignore
-from .base import *  # noqa: F403
+from .base import *  # noqa
 from .base import BASE_DIR
 
 
@@ -16,3 +16,15 @@ SITE_NAME = getenv("SITE_NAME")
 SECRET_KEY = getenv("DJANGO_SECRET_KEY", "PMcqWdmMVC2MocbNqqEhIw9kKBIOQquSV_4EKXSwC9CpJdRabC8")
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "0.0.0.0"]
+
+ADMIN_URL = getenv("DJANGO_ADMIN_URL")
+
+EMAIL_BACKEND = "djcelery_email.backends.CeleryEmailBackend"
+
+EMAIL_HOST = getenv("EMAIL_HOST")
+
+EMAIL_PORT = getenv("EMAIL_PORT")
+
+DEFAULT_FROM_EMAIL = getenv("DEFAULT_FROM_EMAIL")
+
+DOMAIN = getenv("DOMAIN")
