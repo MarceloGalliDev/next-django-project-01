@@ -34,3 +34,8 @@ O uso do %(name)-12s, representa o nome do log e limitando-o a 12 caracteres, os
 
 ### Docker
 [Document Docker Multi-Stage](https://docs.docker.com/build/building/multi-stage/)
+
+Criando uma rede nova
+```
+docker network create estate_prod_nw
+```

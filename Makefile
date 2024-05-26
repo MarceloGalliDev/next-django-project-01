@@ -10,7 +10,10 @@ up:
 	docker compose -f local.yml up -d
 
 down:
-	docker compose -f local.yml down
+	docker compose -f local.yml down -v
+
+docker-config:
+	docker compose -f local.yml config
 
 show-logs:
 	docker compose -f local.yml logs
@@ -44,9 +47,6 @@ down-v:
 
 volume:
 	docker volume inspect $(ROOT_DIR)_local_postgres_data
-
-dusnei-db: 
-	docker compose -f local.yml exec postgres psql --username=marcelo_galli --dbname=dusnei_api
 
 flake8:
 	docker compose -f local.yml exec api flake8 .

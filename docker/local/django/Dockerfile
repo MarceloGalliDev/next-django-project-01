@@ -59,7 +59,7 @@ RUN chmod +x /start
 
 COPY --chown=django:django . ${APP_HOME}
 
-RUN chown django:django
+RUN chown django:django ${APP_HOME}
 
 USER django
 
