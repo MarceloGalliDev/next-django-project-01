@@ -30,3 +30,7 @@ Filter logging = São os filtros incluidos para filtrar os logs entre, autoriza�
 Formatting log = É a formatação da mensagem, como ela vai parecer.
 
 O uso do %(name)-12s, representa o nome do log e limitando-o a 12 caracteres, os caracteres indicado na frente do %() correseponde ao formato do dado
+
+
+### Docker
+[Document Docker Multi-Stage](https://docs.docker.com/build/building/multi-stage/)
