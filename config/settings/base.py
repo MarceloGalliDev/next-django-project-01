@@ -41,7 +41,14 @@ THIRD_PARTY_APPS = [
     'django_celery_beat'
 ]
 
-LOCAL_APPS = []
+LOCAL_APPS = [
+    'core_apps.issues',
+    'core_apps.users',
+    'core_apps.commons',
+    'core_apps.profiles',
+    'core_apps.ratings',
+    'core_apps.posts',
+]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -78,7 +85,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'HOST': getenv("POSTGRES_HOST"),
+        'PORT': getenv("POSTGRES_PORT"),
+        'NAME': getenv("POSTGRES_DB"),
+        'USER': getenv("POSTGRES_USER"),
+        'PASSWORD': getenv("POSTGRES_PASSWORD"),
     }
 }
 

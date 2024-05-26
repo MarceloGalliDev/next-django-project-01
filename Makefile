@@ -107,3 +107,6 @@ shell:
 
 django_test:
 	docker compose -f local.yml run --rm api python manage.py test
+
+runserver:
+	python manage.py runserver

@@ -1,8 +1,10 @@
+import logging  # noqa: F401
 from os import getenv, path  # noqa: F401
+
 from dotenv import load_dotenv
+
 from .base import *  # noqa
 from .base import BASE_DIR
-
 
 local_env_file = path.join(BASE_DIR, ".envs", ".env.local")
 
@@ -28,3 +30,21 @@ EMAIL_PORT = getenv("EMAIL_PORT")
 DEFAULT_FROM_EMAIL = getenv("DEFAULT_FROM_EMAIL")
 
 DOMAIN = getenv("DOMAIN")
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {
+            "format": "%(levelname)s %(name)-12s %(asctime)s %(module)s %(process)d %(thread)d %(message)s"
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "verbose",
+        }
+    },
+    "root": {"level": "INFO", "handlers": ["console"]},
+}
