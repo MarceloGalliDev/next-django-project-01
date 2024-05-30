@@ -39,3 +39,13 @@ Criando uma rede nova
 ```
 docker network create estate_prod_nw
 ```
+
+
+### Passo a Passo
+1. Configuramos todo back-end.
+2. Configuramos o Docker
+3. Criamos o managers.py do app user, para criar o login e authentication
+4. Criamos o models.py
+5. Criamos o forms.py para uso no admin
+6. Criamos o admin.py
+7. Iniciamos o projeto do front-end

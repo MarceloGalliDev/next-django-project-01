@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'HOST': getenv("POSTGRES_HOST"),
         'PORT': getenv("POSTGRES_PORT"),
         'NAME': getenv("POSTGRES_DB"),
@@ -138,3 +138,5 @@ MEDIA_ROOT = str(BASE_DIR / 'mediafiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TAGGIT_CASE_INSENSITIVE = True
+
+AUTH_USER_MODEL = 'users.User'
