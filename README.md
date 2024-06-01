@@ -49,3 +49,9 @@ docker network create estate_prod_nw
 5. Criamos o forms.py para uso no admin
 6. Criamos o admin.py
 7. Iniciamos o projeto do front-end
+8. Configuramos o docker do front-end
+9. Configurando NGINX
+10. Trocar as portas do arquivo local.yml para expose
+11. Verficar se foi criado os logs no container
+12. Configurando Celery
+13. Configurando docker celery

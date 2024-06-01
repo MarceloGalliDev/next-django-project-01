@@ -93,7 +93,6 @@ DATABASES = {
     }
 }
 
-# https://docs.djangoproject.com/en/5.0/topics/auth/passwords/#using-argon2-with-django
 PASSWORD_HASHERS = [
     "django.contrib.auth.hashers.Argon2PasswordHasher",
     "django.contrib.auth.hashers.PBKDF2PasswordHasher",
@@ -140,3 +139,26 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TAGGIT_CASE_INSENSITIVE = True
 
 AUTH_USER_MODEL = 'users.User'
+
+if USE_TZ:
+    CELERY_TIMEZONE = TIME_ZONE
+
+CELERY_BROKER_URL = getenv("CELERY_BROKER_URL")
+CELERY_RESULT_BACKEND = getenv("CELERY_RESULT_BACKEND")
+CELERY_ACCEPT_CONTENT = ["application/json"]
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND_MAX_RETRIES = 10
+
+CELERY_TASK_SEND_SENT_EVENT = True
+CELERY_RESULT_EXTENDED = True
+
+CELERY_RESULT_BACKEND_ALWAYS_RETRY = True
+
+CELERY_TASK_TIME_LIMIT = 5*60
+
+CELERY_TASK_SOFT_TIME_LIMIT = 60
+
+CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+
+CELERY_WORKER_SEND_TASK_EVENTS = True
