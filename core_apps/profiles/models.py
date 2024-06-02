@@ -42,7 +42,7 @@ class Profile(TimeStampedModel):
     city_of_origin = models.CharField(verbose_name=_("City"), max_length=180, default="Maringá")
     report_count = models.IntegerField(verbose_name=_("Report Count"), default=0)
     reputation = models.IntegerField(verbose_name=_("Reputation"), default=100)
-    slug = AutoSlugField(population_from=get_user_username, unique=True)
+    slug = AutoSlugField(populate_from=get_user_username, unique=True)
 
     @property
     def is_banned(self) -> bool:
