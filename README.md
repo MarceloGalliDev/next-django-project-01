@@ -55,3 +55,6 @@ docker network create estate_prod_nw
 11. Verficar se foi criado os logs no container
 12. Configurando Celery
 13. Configurando docker celery
+14. Configuramos o cloudinary
+15. criamos o models de profile
+16. criamos signals de profile
