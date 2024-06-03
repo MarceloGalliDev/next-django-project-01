@@ -56,5 +56,9 @@ docker network create estate_prod_nw
 12. Configurando Celery
 13. Configurando docker celery
 14. Configuramos o cloudinary
-15. criamos o models de profile
-16. criamos signals de profile
+15. Criamos o models de profile
+16. Criamos signals de profile
+17. Configuramos os cookies
+18. Criamos cookie_auth.py
+19. Configuramos o Jozer para autenticação
+20. Configuramos o simple_jwt
