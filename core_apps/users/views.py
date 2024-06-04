@@ -84,7 +84,7 @@ class CustomTokenRefreshView(TokenRefreshView):
         return refresh_res
 
 
-class CustomProviderAuthViewView(ProviderAuthView):
+class CustomProviderAuthView(ProviderAuthView):
     def post(self, request: Request, *args, **kwargs) -> Response:
         provider_res = super().post(request, *args, **kwargs)
 

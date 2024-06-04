@@ -62,3 +62,4 @@ docker network create estate_prod_nw
 18. Criamos cookie_auth.py
 19. Configuramos o Jozer para autenticação
 20. Configuramos o simple_jwt
+21. Incluimos o urls.py de users e também no config
