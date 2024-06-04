@@ -1,4 +1,3 @@
-
 from django.apps import apps
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import UserManager as DjangoUserManager
@@ -7,7 +6,6 @@ from django.core.validators import validate_email
 from django.utils.translation import gettext_lazy as _
 
 
-# função para validar emails
 def validate_email_address(email: str):
     try:
         validate_email(email)
@@ -15,20 +13,16 @@ def validate_email_address(email: str):
         raise ValidationError(_("Enter a valid email address"))
 
 
-# instanciando uma classe para validar dados de usuario
 class UserManager(DjangoUserManager):
     def _create_user(self, username: str, email: str, password: str | None, **extra_fields):
         if not username:
             raise ValueError(_("A username must be provided"))
 
         if not email:
-            raise ValueError(_("A email must be provided"))
+            raise ValueError(_("An email must be provided"))
 
-        # função para deixar tudo minusculo
         email = self.normalize_email(email)
-        # função de validar email
         validate_email_address(email)
-        # obtendo o model user global padrao django
         global_user_model = apps.get_model(
             self.model._meta.app_label, self.model._meta.object_name
         )
@@ -49,7 +43,6 @@ class UserManager(DjangoUserManager):
 
         if extra_fields.get("is_staff") is not True:
             raise ValueError("Superuser must have is_staff=True")
-
         if extra_fields.get("is_superuser") is not True:
             raise ValueError("Superuser must have is_superuser=True")
 

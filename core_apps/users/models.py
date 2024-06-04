@@ -20,15 +20,13 @@ class User(AbstractUser):
     id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     first_name = models.CharField(max_length=60, verbose_name=_("First Name"))
     last_name = models.CharField(max_length=60, verbose_name=_("Last Name"))
-    # db_index é usado para criar o index no banco de dados, facilitando a busca desse dado
     email = models.EmailField(verbose_name=_("Email"), unique=True, db_index=True)
     username = models.CharField(max_length=60, verbose_name=_("Username"), unique=True, validators=[UsernameValidator])
 
     EMAIL_FIELD = "email"
-    USERNAME_FIELD = "username"
-    REQUIRED_FIELDS = ["email", "first_name", "last_name"]
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ["username", "first_name", "last_name"]
 
-    # usando o Custom Manager para criar o usuario e persisti-lo no banco de dados
     objects = UserManager()
 
     class Meta:
