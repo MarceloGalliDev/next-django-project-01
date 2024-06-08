@@ -4,9 +4,8 @@ Django settings for config project.
 
 from pathlib import Path
 from os import getenv, path
-from telnetlib import AUTHENTICATION  # noqa: F401
-import cloudinary
 from datetime import timedelta
+import cloudinary
 from dotenv import load_dotenv  # type: ignore
 
 
@@ -245,7 +244,7 @@ SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
 ]
 SOCIAL_AUTH_GOOGLE_OAUTH2_EXTRA_DATA = ["first_name", "last_name"]
 
-AUTHENTICATION_BACKENDS = [
-    "social_core.backends.google.GoogleOAuth2",
-    "django.contrib.auth.backends.ModelBackend",
-]
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.google.GoogleOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)

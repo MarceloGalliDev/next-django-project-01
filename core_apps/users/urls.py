@@ -3,7 +3,7 @@ from .views import CustomProviderAuthView, CustomTokenObtainPairView, CustomToke
 
 
 urlpatterns = [
-    re_path(r"^o/(?P<providers>\S+)/$", CustomProviderAuthView.as_view(), name="provider-auth"),
+    re_path(r"^o/(?P<provider>\S+)/$", CustomProviderAuthView.as_view(), name="provider-auth"),
     path("login/", CustomTokenObtainPairView.as_view(), name="login"),
     path("refresh/", CustomTokenRefreshView.as_view(), name="token_refresh"),
     path("logout/", LogoutAPIView.as_view(), name="logout"),

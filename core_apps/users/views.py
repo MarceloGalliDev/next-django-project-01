@@ -88,7 +88,7 @@ class CustomProviderAuthView(ProviderAuthView):
     def post(self, request: Request, *args, **kwargs) -> Response:
         provider_res = super().post(request, *args, **kwargs)
 
-        if provider_res.status_code == status.HTTP_200_OK:
+        if provider_res.status_code == status.HTTP_201_CREATED:
             # vindo do cookies
             access_token = provider_res.data.get("access")
             refresh_token = provider_res.data.get("refresh")
@@ -104,6 +104,12 @@ class CustomProviderAuthView(ProviderAuthView):
                 provider_res.data["message"] = "Access or refresh token not found in provider response."
                 logger.error("Access or refresh token not found in provider response data.")
         return provider_res
+
+    def get(self, request, *args, **kwargs):
+        provider = kwargs.get('provider')
+        if not provider:
+            return Response({"detail": "Provider not specified"}, status=status.HTTP_400_BAD_REQUEST)
+        return super().get(request, *args, **kwargs)
 
 
 class LogoutAPIView(APIView):

@@ -63,3 +63,5 @@ docker network create estate_prod_nw
 19. Configuramos o Jozer para autenticação
 20. Configuramos o simple_jwt
 21. Incluimos o urls.py de users e também no config
+22. Testando os endpoints no Postman
+23. Criando as cofigurações do Google OAuth2
