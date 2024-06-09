@@ -168,12 +168,12 @@ CELERY_TASK_TIME_LIMIT = 5*60
 
 CELERY_TASK_SOFT_TIME_LIMIT = 60
 
-CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 CELERY_WORKER_SEND_TASK_EVENTS = True
 
 # configurando as tasks
-CELERY_BEAT_SCHEDULER = {
+CELERY_BEAT_SCHEDULE = {
     # configurando a chave-valor (redis)
     "update-reputation-every-day": {
         # task definida  no decorator shared_task o name
