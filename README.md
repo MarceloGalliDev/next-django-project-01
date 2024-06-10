@@ -65,3 +65,7 @@ docker network create estate_prod_nw
 21. Incluimos o urls.py de users e também no config
 22. Testando os endpoints no Postman
 23. Criando as cofigurações do Google OAuth2
+24. Configuramos o agendamento de task pelo Celery Beat
+25. Configuramos as views do profile e do avatar
+26. Configuramos a URL do profile
+27. Criamos o pipeline pra profile
