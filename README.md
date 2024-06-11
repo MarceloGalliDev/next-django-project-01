@@ -69,3 +69,7 @@ docker network create estate_prod_nw
 25. Configuramos as views do profile e do avatar
 26. Configuramos a URL do profile
 27. Criamos o pipeline pra profile
+28. Testamos os endpoints de profile
+29. Criamos o app apartments e configuramos o app
+30. Criamos o model, admin serializer e views de apartments
+31. 
