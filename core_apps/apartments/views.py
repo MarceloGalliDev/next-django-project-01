@@ -29,3 +29,7 @@ class ApartmentDetailAPIView(generics.RetrieveAPIView):
     renderer_classes = [GenericJSONRenderer]
     object_label = 'apartment'
 
+    def get_object(self) -> Apartment:
+        queryset = self.request.user.apartment.all()
+        obj = generics.get_object_or_404(queryset)
+        return obj

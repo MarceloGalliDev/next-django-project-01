@@ -72,4 +72,5 @@ docker network create estate_prod_nw
 28. Testamos os endpoints de profile
 29. Criamos o app apartments e configuramos o app
 30. Criamos o model, admin serializer e views de apartments
-31. 
+31. Configuramos a urlpatterns
+32. Depois voltamos ao profile serializer
