@@ -77,3 +77,4 @@ docker network create estate_prod_nw
 33. Testamos os endpoints
 34. Criaremos os templates dentro da pasta core_apps/templates
 35. Criaremos o templates de email para issues
+36. Criamos o models.py
