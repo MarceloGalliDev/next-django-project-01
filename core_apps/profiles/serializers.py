@@ -44,7 +44,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             return None
 
     # aqui criamos o método do apartments, como usamos um SerializerMethodField, criamos ele aqui
-    def get_apartments(self, obj: Profile) -> str | None:
+    def get_apartment(self, obj: Profile) -> str | None:
         apartment = obj.user.apartment.first()
         if apartment:
             return ApartmentSerializer(apartment).data
