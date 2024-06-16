@@ -65,7 +65,7 @@ class Issue(TimeStampedModel):
         super().save(*args, **kwargs)
 
         if (is_existing_instance and self.assigned_to != old_assigned_to and self.assigned_to is not None):
-            self.notify_assigned_user()
+            self.notify_assigned_to()
 
     def notify_assigned_to(self) -> None:
         try:
@@ -78,7 +78,7 @@ class Issue(TimeStampedModel):
             # os outros valores estão sendo passado nos campos de models.py
             context = {"issue": self, "site_name": SITE_NAME}
 
-            html_email = render_to_string("email/issue_assigment_notification.html", context)
+            html_email = render_to_string("emails/issue_assigment_notification.html", context)
 
             text_email = strip_tags(html_email)
 

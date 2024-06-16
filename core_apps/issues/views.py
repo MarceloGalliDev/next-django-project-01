@@ -103,11 +103,7 @@ class IssueDetailAPIView(generics.RetrieveAPIView):
         issue = super().get_object()
 
         user = self.request.user
-        if not user(
-            user == issue.reported_by or
-            user.is_staff or
-            user == issue.assigned_to
-        ):
+        if not (user == issue.reported_by or user.is_staff or user == issue.assigned_to):
             raise PermissionDenied("You do not have permission to view this issue")
         self.record_issue_view(issue)
 

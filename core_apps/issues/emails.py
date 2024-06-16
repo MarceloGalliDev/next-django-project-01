@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 def send_issue_confirmation_email(issue: Issue) -> None:
     try:
         subject = "Issue Report Confirmation"
-        context = {"Issue": issue, "site_name": SITE_NAME}
+        context = {"issue": issue, "site_name": SITE_NAME}
         # observar o template html
         html_email = render_to_string("emails/issue_confirmation.html", context)
         text_email = strip_tags(html_email)
@@ -34,7 +34,7 @@ def send_issue_confirmation_email(issue: Issue) -> None:
 def send_issue_resolved_email(issue: Issue) -> None:
     try:
         subject = "Issue Resolved"
-        context = {"Issue": issue, "site_name": SITE_NAME}
+        context = {"issue": issue, "site_name": SITE_NAME}
         html_email = render_to_string("emails/issue_resolved_notification.html", context)
         text_email = strip_tags(html_email)
         from_email = DEFAULT_FROM_EMAIL
@@ -52,10 +52,10 @@ def send_issue_resolved_email(issue: Issue) -> None:
 
 def send_resolution_email(issue: Issue) -> None:
     try:
-        subject = f"Issue Resolved: {issue.title}"
+        subject = f"issue Resolved: {issue.title}"
         from_email = DEFAULT_FROM_EMAIL
         recipient_list = [issue.reported_by.email]
-        context = {"Issue": issue, "site_name": SITE_NAME}
+        context = {"issue": issue, "site_name": SITE_NAME}
         html_email = render_to_string("emails/issue_resolved_notification.html", context)
         text_email = strip_tags(html_email)
         email = EmailMultiAlternatives(subject, text_email, from_email, recipient_list)
