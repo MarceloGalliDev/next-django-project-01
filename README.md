@@ -81,4 +81,6 @@ docker network create estate_prod_nw
 37. Criamos o serializers.py de issues
 38. Criamos o view.py de issues
 39. Criamos o urls.py de issues
-40. 
+40. Testando os endpoints
+41. Criando o app de reports
+42. 
