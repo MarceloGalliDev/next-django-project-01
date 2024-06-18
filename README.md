@@ -83,4 +83,5 @@ docker network create estate_prod_nw
 39. Criamos o urls.py de issues
 40. Testando os endpoints
 41. Criando o app de reports
-42. 
+42. Criando template de emails para o reports
+43. 
