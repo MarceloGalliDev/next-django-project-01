@@ -88,3 +88,6 @@ docker network create estate_prod_nw
 44. Criando o serializers.py de reports e views.py
 45. Criando a url.py e admin.py
 46. Testando no postman
+47. Criando models.py ratings
+48. Criando serializers.py
+49. 

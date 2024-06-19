@@ -19,4 +19,6 @@ def update_user_report_count_and_reputation(sender: Type[ModelBase], instance: R
             if reported_user_profile.report_count == 1:
                 send_warning_email(instance.reported_user, instance.title, instance.description)
             elif reported_user_profile.report_count >= 5:
+                instance.reported_user.is_active = False
+                instance.reported_user.save()
                 send_deactivation_email(instance.reported_user, instance.title, instance.description)
