@@ -94,3 +94,4 @@ docker network create estate_prod_nw
 50. Adicionando o Ratings ao Profile.models
 50. Adicionando o Ratings ao Profile.serializers
 51. Adicionando o urls.py e testando os endpoints
+52. Criando models.py do posts
