@@ -96,3 +96,4 @@ docker network create estate_prod_nw
 51. Adicionando o urls.py e testando os endpoints
 52. Criando models.py do posts
 53. Criando permissions.py do posts
+54. Criando serializers.py do posts
