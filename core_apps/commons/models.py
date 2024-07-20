@@ -38,12 +38,12 @@ class ContentView(TimeStampedModel):
         return f"{self.content_object} viewed by {self.user.get_full_name if self.user else 'Anonymous'} from IP {self.viewer_ip}"
 
     @classmethod
-    def record_view(cls, content_object, user: User, viewer_ip: str) -> None: # type: ignore
+    def record_view(cls, content_object, user: User, viewer_ip: str) -> None:  # type: ignore
         content_type = ContentType.objects.get_for_model(content_object)
         try:
             view, created = cls.objects.get_or_create(
-                content_type=content_type, 
-                object_id=content_object.pkid, 
+                content_type=content_type,
+                object_id=content_object.pkid,
                 defaults={"user": user, "viewer_ip": viewer_ip}
             )
             if not created:
